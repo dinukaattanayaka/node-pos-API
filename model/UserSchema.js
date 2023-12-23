@@ -13,7 +13,7 @@ password:{
     required : true
 },
 activeState:{
-    type: boolean,
+    type: Boolean,
     required : true
 }
 

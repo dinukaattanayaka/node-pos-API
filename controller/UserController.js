@@ -1,9 +1,9 @@
 const { default: mongoose } = require('mongoose');
 const userSchema = require('../model/UserSchema');
 const bcrypt = require ('bcrypt');
-const solt =10 ;
+const salt = 10;
 
-const register = (req,res)=>{
+const register = async(req,res)=>{
     bcrypt.hash(req.body.password , salt, function(err,hash){
         if(err){
             return response.status(500).json(err);
@@ -15,10 +15,10 @@ const register = (req,res)=>{
             activeState: req.body.activeState
         });
         user.save().then(saveResponse=>{
-            return resp.status(201).json({'message':'saved!'})
+            return res.status(201).json({'message':'saved!'})
 
         }).catch(error=>{
-            return resp.status(500).json(error);
+            return res.status(500).json(error);
         });
     })
 
