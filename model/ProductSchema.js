@@ -8,6 +8,10 @@ description:{
     type: String,
     required : true
 },
+img:{
+    type: String,
+    required : true
+    },
 unitPrice:{
     type: Number,
     required : true
